@@ -17,12 +17,12 @@ import (
 )
 
 type Config struct {
-	InfuraApiUrl string `json:"infura_api_url"`
-	Value int64 `json:"value"`
+	InfuraApiUrl     string `json:"infura_api_url"`
+	Value            int64  `json:"value"`
 	WalletPrivateKey string `json:"wallet_private_key"`
-	ContractAddress string `json:"contract_address"`
-	GasLimit int64 `json:"gas_limit"`
-	ABI string `json:"abi"`
+	ContractAddress  string `json:"contract_address"`
+	GasLimit         int64  `json:"gas_limit"`
+	ABI              string `json:"abi"`
 }
 
 func LoadConfiguration(file string) Config {
@@ -63,8 +63,7 @@ func checkTransactionReceipt(client *ethclient.Client, _txHash string) int {
 	return int(tx.Status)
 }
 
-
-func main()  {
+func main() {
 	config := LoadConfiguration("config.json")
 	ctx := context.Background()
 
